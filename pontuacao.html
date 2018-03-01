@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Campeonato !</h1>
+		
+		<script type="text/javascript">
+			function calculaJogo(){
+				var nome = prompt("Qual o time ?");
+				var vitorias = parseInt(prompt("Quantas vitorias ?"));
+				var empates = parseInt(prompt("Quantos empates ?"));
+				var derrotas = parseInt(prompt("Quantas derrotas ?"));
+
+				var resultado = vitorias*3+empates+derrotas*0;
+
+				return [nome, resultado]; //Retorna um array
+			}
+
+			var time1 = calculaJogo();
+			var time2 = calculaJogo();
+
+			/*Verifica condições para ver qual time venceu*/
+			if(time1[1]>time2[1]){
+				document.write(time1[0]+" ganhou com "+time1[1]+" pontos");
+			}else
+				if (time2[1]>time1[1]) {
+					document.write(time2[0]+" ganhou com "+time2[1]+" pontos");
+				}else
+					document.write("Ocorreu um empate com "+ time2[1]+" pontos");
+
+
+		</script>
+	</body>
+</html>

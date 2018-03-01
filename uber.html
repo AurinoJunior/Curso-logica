@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Uber</title>
+    </head>
+
+    <body>
+        
+        <h1>Uber</h1>
+
+        <script src="funcoes.js"></script>
+        <script>
+
+            //Function -----------------------------------------------          
+            function delvolveUmNumero(texto){
+                return parseFloat(prompt(texto).replace(",","."));
+            }
+
+            function formatar(valor,numCasas){
+                return valor.toFixed(numCasas).replace(".",",");
+            }
+
+            function formatarGrana(valor){
+                return formatar(valor,2);
+            }
+        
+            //Variaveis ----------------------------------------------
+            var precoBase=2.00;
+            var tempo = delvolveUmNumero("Tempo em min");
+
+            var distancia = delvolveUmNumero("Qual a distancia");
+            var preco = delvolveUmNumero("Preco da gasolina");             
+            var consumo = delvolveUmNumero("Quanto seu carro faz ?");
+            var gasolina= distancia * preco / consumo;
+
+            var estacionamento =delvolveUmNumero("Qual o valor do estacionamento ?");
+
+            var total = gasolina+estacionamento;
+            var uber = precoBase+(distancia*1.40)+(tempo*0.26);
+            
+            //Code ---------------------------------------------------
+            document.write("Total R$ "+formatarGrana(uber));
+            document.write("<h1>Carro</h1>");
+            document.write("Gasto de gasolina R$ "+formatarGrana(gasolina));
+            document.write("<br>Estacionamento R$ "+formatarGrana(estacionamento));
+            document.write("<br>Total R$ "+ formatarGrana(total));
+
+        </script>
+    </body>
+</html>
